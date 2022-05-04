@@ -1,6 +1,5 @@
 package br.com.fourpark.project.objects;
 
-import java.text.MessageFormat;
 import java.util.UUID;
 
 public class Carro {
@@ -11,7 +10,19 @@ public class Carro {
 	private String telefoneContato;
 	private String tipo; // Carro, Moto, Caminhão, etc...
 
+	public Carro(String placa, String modelo) {
+		this.placa = placa;
+		this.modelo = modelo;
+	}
 	
+	
+	@Override
+	public String toString() {
+		return "Carro placa = " + placa + ", modelo = " + modelo;
+	}
+
+
+
 	public UUID getId() {
 		return id;
 	}
@@ -50,11 +61,6 @@ public class Carro {
 
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
-	}
-	
-	public String toString() {
-		System.out.println(MessageFormat.format("Placa: {0}, Modelo: {1} ", this.getPlaca(), this.getModelo()));
-		return "";
 	}
 
 }
