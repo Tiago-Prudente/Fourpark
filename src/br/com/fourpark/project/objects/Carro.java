@@ -7,21 +7,19 @@ public class Carro {
 	private String placa;
 	private String modelo;
 	private UUID id; // ID estilo UUID
-	private String telefoneContato;
+	private Pessoa pessoa; // Dono do veículo
 	private String tipo; // Carro, Moto, Caminhão, etc...
 
 	public Carro(String placa, String modelo) {
+		this.id = UUID.randomUUID();
 		this.placa = placa;
 		this.modelo = modelo;
 	}
-	
-	
+
 	@Override
 	public String toString() {
 		return "Carro placa = " + placa + ", modelo = " + modelo;
 	}
-
-
 
 	public UUID getId() {
 		return id;
@@ -31,12 +29,12 @@ public class Carro {
 		this.id = id;
 	}
 
-	public String getTelefoneContato() {
-		return telefoneContato;
+	public Pessoa getPessoa() {
+		return pessoa;
 	}
 
-	public void setTelefoneContato(String telefoneContato) {
-		this.telefoneContato = telefoneContato;
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
 	}
 
 	public String getTipo() {
